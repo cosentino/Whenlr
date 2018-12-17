@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router'
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { ItemsService } from '../items.service';
 
 @Component({
-  selector: 'app-item-editor',
-  templateUrl: './item-editor.component.html',
-  styleUrls: ['./item-editor.component.scss'],
+  selector: 'app-item',
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.scss'],
   providers: [ItemsService]
 })
-export class ItemEditorComponent {
+export class ItemComponent {
 
   itemForm = new FormGroup({
     title: new FormControl(''),

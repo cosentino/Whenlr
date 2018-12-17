@@ -12,12 +12,11 @@ import { MyMaterialModule } from './material-theme/material-theme.module';
 import { AppComponent } from './app.component';
 
 import { ListComponent, DeleteConfirmDialog } from './list/list.component';
-import { CreateComponent } from './create/create.component';
+import { ItemComponent } from './item/item.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ItemEditorComponent } from './item-editor/item-editor.component';
 
 const appRoutes: Routes = [
-  { path: 'create', component: CreateComponent },
+  { path: 'create', component: ItemComponent },
   // { path: 'item/:id',      component: ItemDetailComponent },
   {
     path: 'list',
@@ -36,9 +35,8 @@ const appRoutes: Routes = [
     AppComponent,
     ListComponent,
     DeleteConfirmDialog,
-    CreateComponent,
+    ItemComponent,
     PageNotFoundComponent,
-    ItemEditorComponent
   ],
   entryComponents: [DeleteConfirmDialog],
   imports: [
