@@ -1,0 +1,11 @@
+<div class="list">
+  <mat-card class="item-card" *ngFor="let item of itemsService.items | async">
+    <div class="item-card__date">{{ item.date.toDate() | date: 'dd/MM/yyyy' }}</div>
+    <div class="item-card__title">{{ item.title }}</div>
+    <div class="item-card__actions">
+      <button (click)="deleteItem(item.id)" routerLinkActive="active" mat-icon-button>
+        <i class="material-icons">delete_outline</i>
+      </button>
+    </div>
+  </mat-card>
+</div>

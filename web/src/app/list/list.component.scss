@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+.list {
+  margin: 20px 0;
+}
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.item-card__date {
+  position: absolute;
+  top: 8px;
+  font-size: 11px;
+  color: #828282;
+}
+.item-card__title {
+  font-size: 15px;
+}
+.item-card__actions {
+  margin-right: -5px;
+}

@@ -1,0 +1,22 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+  <mat-toolbar class="header-toolbar">
+    <button routerLink="/list" routerLinkActive="active" mat-icon-button>
+      <i class="material-icons">close</i>
+    </button>
+    <span class="spacer"></span>
+    <button type="submit" [disabled]="!itemForm.valid" mat-flat-button color="primary">Save</button>
+  </mat-toolbar>
+  <div class="form-content">
+    <mat-form-field focused="true">
+      <input formControlName="title" matInput type="text" placeholder="What happened?" cdkFocusInitial>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="date" matInput [matDatepicker]="datePicker1" placeholder="When was it?">
+      <mat-datepicker-toggle matSuffix [for]="datePicker1"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+</form>
+<!--
+  Value: {{ itemForm.value.textFormControl }}
+-->

@@ -1,0 +1,23 @@
+/* APP GLOBAL STYLES */
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-content {
+  flex-grow: 2;
+}
