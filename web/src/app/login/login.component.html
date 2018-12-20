@@ -1,0 +1,16 @@
+<h2>Login</h2>
+<p>{{message}}</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" *ngIf="!(authService.isLoggedIn | async)" >
+  <div class="form-content">
+    <mat-form-field focused="true">
+      <input formControlName="email" matInput type="email" placeholder="E-Mail" cdkFocusInitial>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="password" matInput type="password" placeholder="Password">
+    </mat-form-field>
+  </div>
+  <button type="submit" [disabled]="!loginForm.valid" mat-flat-button color="primary">Login</button>
+</form>
+
+<button (click)="logout()" *ngIf="authService.isLoggedIn | async" mat-flat-button color="primary">Logout</button>
