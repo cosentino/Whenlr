@@ -1,0 +1,7 @@
+<h1>Whenlr</h1>
+
+<firebase-ui
+    (signInSuccessWithAuthResult)="signInSuccessCallback($event)"
+    (signInFailure)="signInErrorCallback($event)"></firebase-ui>
+
+<button (click)="signOut()" *ngIf="authService.isLoggedIn | async" mat-flat-button color="primary">Logout</button>
