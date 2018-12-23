@@ -1,0 +1,15 @@
+{
+  "name": "whenlr",
+  "version": "0.0.0",
+  "scripts": {
+    "setup": "npm install && cd web && npm install && cs .. && firebase login",
+    "start": "cd web && ng serve --open",
+    "deploy": "cd web && ng build && cd.. && firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:firestore": "firebase deploy --only firestore"
+  },
+  "private": true,
+  "devDependencies": {
+    "firebase-tools": "^6.2.2"
+  }
+}

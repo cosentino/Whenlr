@@ -4,4 +4,4 @@
     (signInSuccessWithAuthResult)="signInSuccessCallback($event)"
     (signInFailure)="signInErrorCallback($event)"></firebase-ui>
 
-<button (click)="signOut()" *ngIf="authService.isLoggedIn | async" mat-flat-button color="primary">Logout</button>
+<button (click)="signOut()" *ngIf="authService.isLoggedInObs | async" mat-flat-button color="primary">Logout</button>
