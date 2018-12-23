@@ -1,24 +1,28 @@
 import { Injectable } from '@angular/core';
-
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
-
-import { Observable, from } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn: Observable<boolean>;
+  isLoggedIn: boolean;
+  isLoggedInObs: Observable<boolean>;
+  loggedUser: firebase.User;
+  loggedUserObs: Observable<firebase.User>;
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
   constructor(public afAuth: AngularFireAuth) {
-    this.isLoggedIn = this.afAuth.authState.pipe(map((user: firebase.User) => {
-      return user ? true : false;
+    const self = this;
+    this.isLoggedInObs = this.afAuth.authState.pipe(map((user: firebase.User) => {
+      self.loggedUser = user;
+      self.isLoggedIn = user ? true : false
+      return self.isLoggedIn;
     }));
+    this.loggedUserObs = this.afAuth.authState;
   }
 
   signOut(): void {

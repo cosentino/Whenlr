@@ -7,6 +7,7 @@
     <button type="submit" [disabled]="!itemForm.valid" mat-flat-button color="primary">Save</button>
   </mat-toolbar>
   <div class="form-content">
+    <input formControlName="userId" type="hidden" [ngModel]="this.loggedUserId | async">
     <mat-form-field focused="true">
       <input formControlName="title" matInput type="text" placeholder="What happened?" cdkFocusInitial>
     </mat-form-field>

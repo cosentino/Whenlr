@@ -20,7 +20,7 @@ export class AccessGuard implements CanActivate {
     if (!requiresLogin) {
       return true;
     } else {
-      return this.authService.isLoggedIn.pipe(map((isLoggedIn: boolean) => {
+      return this.authService.isLoggedInObs.pipe(map((isLoggedIn: boolean) => {
         if (!isLoggedIn) {
           // Store the attempted URL for redirecting
           this.authService.redirectUrl = state.url;
