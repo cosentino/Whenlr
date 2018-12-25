@@ -4,8 +4,8 @@
   "scripts": {
     "setup": "npm install && cd web && npm install && cs .. && firebase login",
     "start": "cd web && ng serve --open",
-    "deploy": "cd web && ng build && cd.. && firebase deploy",
-    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy": "cd web && ng build --prod && cd .. && firebase deploy",
+    "deploy:hosting": "cd web && ng build --prod && cd .. && firebase deploy --only hosting",
     "deploy:firestore": "firebase deploy --only firestore"
   },
   "private": true,
