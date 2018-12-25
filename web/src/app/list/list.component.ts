@@ -1,8 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 import { ItemsService } from '../items.service';
+import { ItemDeleteDialogComponent, ItemDeleteDialogData } from '../item-delete-dialog/item-delete-dialog.component';
 
 @Component({
   selector: 'app-list',
@@ -12,10 +13,10 @@ import { ItemsService } from '../items.service';
 })
 export class ListComponent {
 
-  constructor(private itemsService: ItemsService, public dialog: MatDialog) {}
+  constructor(public itemsService: ItemsService, public dialog: MatDialog) {}
 
   deleteItem(itemId): void {
-    const dialogRef = this.dialog.open(DeleteConfirmDialog, {
+    const dialogRef = this.dialog.open<ItemDeleteDialogComponent, ItemDeleteDialogData>(ItemDeleteDialogComponent, {
       width: '250px',
       data: { itemId }
     });
@@ -24,32 +25,6 @@ export class ListComponent {
       if (result.confirmed) {
         this.itemsService.itemsCollection.doc(result.itemId).delete();
       }
-    });
-  }
-}
-
-export interface DeleteConfirmDialogData {
-  itemId: string;
-}
-
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  template: '<div mat-dialog-content><p>Are you sure?</p></div>\
-    <div mat-dialog-actions>\
-      <button mat-button (click)="onAnswerClick(false)" cdkFocusInitial>No</button>\
-      <button mat-button (click)="onAnswerClick(true, data.itemId)">Yes</button>\
-    </div>'
-})
-export class DeleteConfirmDialog {
-  constructor(
-      public dialogRef: MatDialogRef<DeleteConfirmDialog>,
-      @Inject(MAT_DIALOG_DATA) public data: DeleteConfirmDialogData
-    ) {}
-
-  onAnswerClick(answer: boolean, itemId: string): void {
-    this.dialogRef.close({
-      confirmed: answer,
-      itemId: itemId
     });
   }
 }

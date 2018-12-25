@@ -20,7 +20,8 @@ import { AppComponent } from './app.component';
 import { AccessGuard } from './access.guard';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ListComponent, DeleteConfirmDialog } from './list/list.component';
+import { ListComponent } from './list/list.component';
+import { ItemDeleteDialogComponent } from './item-delete-dialog/item-delete-dialog.component';
 import { ItemComponent } from './item/item.component';
 import { LoginComponent } from './login/login.component';
 
@@ -93,11 +94,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     PageNotFoundComponent,
     ListComponent,
-    DeleteConfirmDialog,
+    ItemDeleteDialogComponent,
     ItemComponent,
     LoginComponent,
   ],
-  entryComponents: [DeleteConfirmDialog],
+  entryComponents: [ItemDeleteDialogComponent],
   imports: [
     RouterModule.forRoot(
       appRoutes,
