@@ -24,6 +24,7 @@ import { ListComponent } from './list/list.component';
 import { ItemDeleteDialogComponent } from './item-delete-dialog/item-delete-dialog.component';
 import { ItemComponent } from './item/item.component';
 import { LoginComponent } from './login/login.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 const appRoutes: Routes = [
   {
@@ -113,6 +114,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     BrowserAnimationsModule,
     MyMaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]

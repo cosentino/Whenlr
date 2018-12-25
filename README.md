@@ -26,12 +26,17 @@ Public url: https://whenlr-b2fe0.firebaseapp.com/
 
 Firebase project console: https://console.firebase.google.com/project/whenlr-b2fe0/overview
 
+## PWA
+
+Progressive Web App capabilities were implemented via the standard Angular NGSW.
+Note: the service worker and "Add 2 home screen" features are only enabled on production environment.
+
+Check the Service Worker status: https://whenlr-b2fe0.firebaseapp.com/ngsw/state
+
 ## TODO
 
-- PWA (progressive web app, Google Workbox?)
-  - add manifest for Add to Home screen
-  - service workers for assets caching
-  - implement offline mode
+- PWA
+  - offline mode
   - push notifications
 - implement route to edit existing items
 - add description field to items
