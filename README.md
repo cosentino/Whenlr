@@ -35,10 +35,8 @@ Check the Service Worker status: https://whenlr-b2fe0.firebaseapp.com/ngsw/state
 
 ## TODO
 
-- implement route to edit existing items
-- fix styles
 - add description field to items
 - on item creation, propose text suggestions based on existing items
-- PWA
+- PWA:
   - offline mode
   - push notifications

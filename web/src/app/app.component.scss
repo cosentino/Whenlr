@@ -3,8 +3,22 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-.footer {
-  display: flex;
-  padding: 20px;
+.header-toolbar {
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.add-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
 }
