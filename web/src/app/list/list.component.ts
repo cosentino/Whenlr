@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 
 import { ItemsService } from '../items.service';
@@ -13,9 +13,9 @@ import { ItemDeleteDialogComponent, ItemDeleteDialogData } from '../item-delete-
 })
 export class ListComponent {
 
-  constructor(public itemsService: ItemsService, public dialog: MatDialog) {}
+  constructor(public itemsService: ItemsService, public dialog: MatDialog, private router: Router) {}
 
-  deleteItem(itemId): void {
+  deleteItem(itemId: string): void {
     const dialogRef = this.dialog.open<ItemDeleteDialogComponent, ItemDeleteDialogData>(ItemDeleteDialogComponent, {
       width: '250px',
       data: { itemId }
@@ -27,4 +27,9 @@ export class ListComponent {
       }
     });
   }
+
+  navigateToEditItem(itemId: string): void {
+    this.router.navigate(['item', itemId]);
+  }
+
 }

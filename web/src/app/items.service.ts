@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Item, ItemId } from './item';
@@ -24,6 +24,18 @@ export class ItemsService {
         return { id, ...data };
       }))
     );
+  }
+
+  getItem(itemId: string): Observable<Item> {
+    return from(
+        this.itemsCollection.doc(itemId).ref.get()
+      )
+      .pipe(map(snapshot => {
+          const data = snapshot.data() as Item;
+          const id = snapshot.id;
+          return { id, ...data };
+        }
+      ));
   }
 
 }

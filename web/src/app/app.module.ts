@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PropagationStopModule } from 'ngx-propagation-stop';
 
 // currently there is a bug while building the app with --prod
 // - https://github.com/RaphaelJenni/FirebaseUI-Angular/issues/76
@@ -37,12 +38,12 @@ const appRoutes: Routes = [
     data: { requiresLogin: true },
     canActivate: [ AccessGuard ]
   },
-  // {
-  //   path: 'item/:id',
-  //   component: ItemDetailComponent,
-  //   data: { requiresLogin: true },
-  //   canActivate: [ AccessGuard ]
-  // },
+  {
+    path: 'item/:id',
+    component: ItemComponent,
+    data: { requiresLogin: true },
+    canActivate: [ AccessGuard ]
+  },
   {
     path: 'list',
     component: ListComponent,
@@ -108,6 +109,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    PropagationStopModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule,
