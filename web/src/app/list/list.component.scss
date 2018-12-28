@@ -1,6 +1,6 @@
 :host {
   display: block;
-  padding: 16px;
+  padding: 20px 16px 16px 16px;
 }
 .list {
   margin: 0 0 70px;
@@ -15,10 +15,12 @@
   position: absolute;
   top: 8px;
   font-size: 11px;
+  line-height: 13px;
   color: #828282;
 }
 .item-card__title {
   font-size: 15px;
+  line-height: 18px;
 }
 .item-card__actions {
   margin-right: -5px;
