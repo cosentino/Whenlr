@@ -1,7 +1,19 @@
 /* APP GLOBAL STYLES */
 
+@import '~@angular/material/theming';
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~firebaseui/dist/firebaseui.css';
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto,"Helvetica Neue",sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 400)
+);
+
+@include mat-base-typography($custom-typography);
+
 
 html,
 body {
