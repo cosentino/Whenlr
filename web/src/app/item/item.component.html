@@ -1,6 +1,6 @@
 <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
   <mat-toolbar class="header-toolbar">
-    <button routerLink="/list" routerLinkActive="active" mat-icon-button>
+    <button type="button" routerLink="/list" mat-icon-button>
       <i class="material-icons">close</i>
     </button>
     <span class="spacer"></span>
@@ -9,7 +9,7 @@
   <div class="form-content">
     <input formControlName="userId" type="hidden">
     <mat-form-field focused="true">
-      <input formControlName="title" matInput type="text" placeholder="What happened?" cdkFocusInitial>
+      <input formControlName="title" matInput type="text" placeholder="What happened?">
     </mat-form-field>
     <mat-form-field>
       <input formControlName="date" matInput [matDatepicker]="datePicker1" placeholder="When was it?">
