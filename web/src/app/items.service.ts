@@ -16,7 +16,9 @@ export class ItemsService {
     if (!authService.loggedUser) {
       return;
     }
-    this.itemsCollection = afs.collection<Item>('items', ref => ref.where('userId', '==', authService.loggedUser.uid));
+    this.itemsCollection = afs.collection<Item>('items',
+      ref => ref.where('userId', '==', authService.loggedUser.uid).orderBy('date', 'desc')
+    );
     this.items = this.itemsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Item;

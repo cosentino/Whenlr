@@ -35,12 +35,11 @@ Check the Service Worker status: https://whenlr-b2fe0.firebaseapp.com/ngsw/state
 
 ## TODO
 
-- sort list by date
 - filter list by date range
 - update tests
 - add description field to items
 - on item creation, propose text suggestions based on existing items
 - implement item clone action
 - PWA:
-  - offline mode
+  - notify user on offline/online
   - push notifications
