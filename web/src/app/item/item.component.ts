@@ -50,9 +50,9 @@ export class ItemComponent implements OnInit {
     // on submit create a new item or update the existing one (if in edit mode)
     this.id$.subscribe(id => {
       if (id) {
-        this.itemsService.itemsCollection.doc(id).update(this.itemForm.value);
+        this.itemsService.updateItem(id, this.itemForm.value);
       } else {
-        this.itemsService.itemsCollection.add(this.itemForm.value);
+        this.itemsService.createItem(this.itemForm.value);
       }
     });
     // redirect the user to the item list screen

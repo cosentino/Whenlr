@@ -1,5 +1,12 @@
-<div class="list">
-  <mat-card class="item-card" *ngFor="let item of itemsService.items | async" (click)="navigateToEditItem(item.id)" tabindex="0">
+<div class="filters">
+  <button mat-button [color]="range===DATE_RANGE_ANY ? 'primary' : ''" (click)="changeDateRange(DATE_RANGE_ANY)">Any</button>
+  <button mat-button [color]="range===DATE_RANGE_LAST_YEAR ? 'primary' : ''" (click)="changeDateRange(DATE_RANGE_LAST_YEAR)">Last year</button>
+  <button mat-button [color]="range===DATE_RANGE_LAST_MONTH ? 'primary' : ''" (click)="changeDateRange(DATE_RANGE_LAST_MONTH)">Last month</button>
+  <button mat-button [color]="range===DATE_RANGE_THIS_YEAR ? 'primary' : ''" (click)="changeDateRange(DATE_RANGE_THIS_YEAR)">This year</button>
+  <button mat-button [color]="range===DATE_RANGE_THIS_MONTH ? 'primary' : ''" (click)="changeDateRange(DATE_RANGE_THIS_MONTH)">This month</button>
+</div>
+<div class="list" *ngIf="(listItems$ | async) as items; else loading">
+  <mat-card class="item-card"  *ngFor="let item of items" (click)="navigateToEditItem(item.id)" tabindex="0">
     <div class="item-card__date">{{ item.date.toDate() | date: 'dd/MM/yyyy' }}</div>
     <div class="item-card__title">{{ item.title }}</div>
     <div class="item-card__actions">
@@ -9,3 +16,6 @@
     </div>
   </mat-card>
 </div>
+<ng-template #loading>
+  <p class="list-loading">Loading...</p>
+</ng-template>

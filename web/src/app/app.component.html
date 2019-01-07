@@ -1,17 +1,20 @@
 <mat-toolbar class="header-toolbar" color="primary">
   <span>Whenlr</span>
   <span class="spacer"></span>
-  <!-- <button routerLink="/list" routerLinkActive="active" mat-icon-button>
+  <!-- <button routerLink="/list" mat-icon-button>
     <i class="material-icons">list</i>
   </button> -->
-  <button routerLink="/login" routerLinkActive="active" mat-icon-button>
+  <!-- <button routerLink="/filter" mat-icon-button>
+    <i class="material-icons">date_range</i>
+  </button> -->
+  <button routerLink="/login" mat-icon-button>
     <i class="material-icons">account_circle</i>
   </button>
 </mat-toolbar>
 <div class="main-content">
   <router-outlet></router-outlet>
 </div>
-<button class="add-button" routerLink="/create" routerLinkActive="active" mat-fab color="primary">
+<button class="add-button" routerLink="/create" mat-fab color="primary">
   <i class="material-icons">add</i>
 </button>
 

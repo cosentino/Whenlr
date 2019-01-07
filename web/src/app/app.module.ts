@@ -10,9 +10,9 @@ import { PropagationStopModule } from 'ngx-propagation-stop';
 // the plugin exposes the two libraries as well. You can use those:
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -121,4 +121,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private afs: AngularFirestore) {
+    afs.firestore.app.firestore().settings({ timestampsInSnapshots: true });
+  }
+}

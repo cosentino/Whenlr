@@ -1,9 +1,9 @@
-import { Timestamp } from 'firebase/firestore';
+import * as firebase from 'firebase';
 
 export interface Item {
   userId: string;
   title: string;
-  date: Date | Timestamp;
+  date: firebase.firestore.Timestamp;
 }
 export interface ItemId extends Item {
   id: string;

@@ -28,7 +28,7 @@
     "firebase": "^5.7.0",
     "firebaseui": "^3.5.0",
     "firebaseui-angular": "^3.3.3",
-    "moment": "^2.22.2",
+    "moment": "^2.23.0",
     "ngx-moment": "^3.3.0",
     "ngx-propagation-stop": "^1.0.6",
     "rxjs": "~6.3.3",

@@ -7,7 +7,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
-  imports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule],
-  exports: [MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule],
+  imports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
+  ],
 })
 export class MyMaterialModule { }

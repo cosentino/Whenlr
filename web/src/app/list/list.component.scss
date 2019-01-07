@@ -2,6 +2,19 @@
   display: block;
   padding: 20px 16px 16px 16px;
 }
+.filters {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow-x: auto;
+  border-bottom: solid 1px #dcdcdc;
+  text-align: center;
+  .mat-button {
+    min-width: 40px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
 .list {
   margin: 0 0 70px;
 }

@@ -4,6 +4,8 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import '~firebaseui/dist/firebaseui.css';
 
+@include mat-core();
+
 // Define a custom typography config that overrides the font-family as well as the
 // `headlines` and `body-1` levels.
 $custom-typography: mat-typography-config(

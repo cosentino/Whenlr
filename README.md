@@ -35,7 +35,8 @@ Check the Service Worker status: https://whenlr-b2fe0.firebaseapp.com/ngsw/state
 
 ## TODO
 
-- filter list by date range
+- infinite scroll
+- full text search
 - update tests
 - add description field to items
 - on item creation, propose text suggestions based on existing items
