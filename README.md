@@ -7,13 +7,13 @@ Simple mobile web app to keep track of when things happen (base on Angular, Mate
 
 Install web project dependencies, the firebase-tools cli, and make you login to firebase google account.
 
-    npm setup
+    npm run setup
 
 ### Serving for local development
 
 Build the web angular project, watch for changes, serve it locally and open it up in the browser.
 
-    npm start
+    npm run start
 
 ### Deploy
 

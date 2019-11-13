@@ -29,6 +29,7 @@
     "firebaseui": "^3.5.0",
     "firebaseui-angular": "^3.3.3",
     "moment": "^2.23.0",
+    "ngx-infinite-scroll": "^7.0.1",
     "ngx-moment": "^3.3.0",
     "ngx-propagation-stop": "^1.0.6",
     "rxjs": "~6.3.3",

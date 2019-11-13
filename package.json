@@ -2,7 +2,7 @@
   "name": "whenlr",
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm install && cd web && npm install && cs .. && firebase login",
+    "setup": "npm install && cd web && npm install && cd .. && firebase login",
     "start": "cd web && ng serve --open",
     "deploy": "cd web && ng build --prod && cd .. && firebase deploy",
     "deploy:hosting": "cd web && ng build --prod && cd .. && firebase deploy --only hosting",
