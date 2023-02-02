@@ -10,6 +10,6 @@
   },
   "private": true,
   "devDependencies": {
-    "firebase-tools": "^6.2.2"
+    "firebase-tools": "^6.12.0"
   }
 }
